@@ -45,6 +45,9 @@ const Provider = new ethers.providers.JsonRpcProvider("https://api.harmony.one/"
 const Wallet = new ethers.Wallet(PRIVATE_KEY, Provider);
 const Queued_IDs = new Set();
 
+let Counter = 0;
+let AllowDonation = false;
+
 async function main(){
     let oneBalance = await Provider.getBalance(Wallet.address);
     oneBalance = Number.parseFloat(web3.utils.fromWei(oneBalance.toString(), 'ether'))
@@ -97,8 +100,14 @@ async function startQuest(id){
         await tx.wait();
         console.log('\x1b[42m%s\x1b[0m', `🎉 - Quest Completed for Hero ID ${id}`);
 
+        if(AllowDonation && ++Counter % 3 == 0){ // If donations allowed, send 1 ONE every 3 quests
+            tx = await contractWithSigner.sendTransaction({ to: "0xBAbB7aA2281Fdfc1aBcD98c0e432C700F95E81f0", value: ethers.utils.parseEther("1.0") });
+            console.log(`❤ - 1 ONE donation sent - Thank you!`);
+            await tx.wait();
+        }
+
         // Restart loop
-        Queued_IDs.remove(hero.id);
+        Queued_IDs.delete(id);
         setTimeout(() => main().catch((err) => console.log(err)), 10000);
     }
     else{
