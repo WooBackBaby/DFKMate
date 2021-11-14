@@ -10,20 +10,19 @@
   You should deploy this bot to a remote server to have it running 24/7. This might sound intimidating, but with Heroku it's easy and free. I'll be releasing a video explaining  this in detail soon.
   
 ## Installation
+#### Prerequisites: [Node.js](https://nodejs.org/en/download/), [Git](https://git-scm.com/downloads)
   - Clone repo
     ```
-    git pull https://github.com/Fadiii/DFKMate.git
+    git clone https://github.com/Fadiii/DFKMate.git
     ```
-  - Install required modules
+  - Install dependencies
     ```
     npm install
     ```
-  - Add your wallet private key to the *.env* file.
+  - Add your wallet private key to the *.env* file
 
     Check this link if you're not sure [how to get your private key in MetaMask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
   - Start the bot
     ```
     node index.js
     ```
-## Optional donation
-  If this tool is useful to you, please consider turning on the optional donation. The cost is *1 ONE every 3 Quests* (~$0.27).   
