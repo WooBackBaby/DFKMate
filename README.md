@@ -13,7 +13,7 @@
 #### Prerequisites: [Node.js](https://nodejs.org/en/download/), [Git](https://git-scm.com/downloads)
   - Clone repo
     ```
-    git pull https://github.com/Fadiii/DFKMate.git
+    git clone https://github.com/Fadiii/DFKMate.git
     ```
   - Install dependencies
     ```
