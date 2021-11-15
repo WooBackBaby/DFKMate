@@ -1,5 +1,6 @@
 # DFKMate - DeFi Kingdoms Quest Helper 🎉
-  >  The bot needs your private key to complete quests on your behalf.
+## Risk
+>  The bot needs your private key to complete quests on your behalf. The main risk for users is that the bot has access to your wallet, so you should check the code before using it! There's comments to explain what it does step by step. (in index.js)
 
   DFKMate starts and completes quests of all your heroes once their stamina is full.
   
@@ -26,5 +27,3 @@
     ```
     node index.js
     ```
-## Risk
-The main risk for users is that the bot has access to your wallet. You're highly encouraged to read the code yourself, even if you're not a programmer. There's comments to explain what it does step by step. (in index.js)
