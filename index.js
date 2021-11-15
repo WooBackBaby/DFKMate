@@ -51,7 +51,10 @@ let AllowDonation = false;
 
 // Wait for user response
 var donationResponse = readlineSync.question('Turn on optional donations (1 ONE/3 Quests)? Type yes or no..');
-if(donationResponse && donationResponse.toLowerCase() == "yes") AllowDonation = true;
+if(donationResponse && donationResponse.toLowerCase() == "yes") {
+    AllowDonation = true;
+    console.log(`❤ - Thank you!`);
+}
 
 async function main(){
     let oneBalance = await Provider.getBalance(Wallet.address);
@@ -97,7 +100,6 @@ async function startQuest(id){
 
         if(AllowDonation && ++Counter % 3 == 0){ // If donations allowed, send 1 ONE every 3 quests
             tx = await contractWithSigner.sendTransaction({ to: "0xBAbB7aA2281Fdfc1aBcD98c0e432C700F95E81f0", value: ethers.utils.parseEther("1.0") });
-            console.log(`❤ - 1 ONE donation sent - Thank you!`);
             await tx.wait();
         }
 
