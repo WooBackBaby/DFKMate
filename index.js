@@ -112,18 +112,11 @@ async function startQuest(id){
 
         if(await Provider.ready){
             console.log('\x1b[45m%s\x1b[0m', `❓ - Start Quest for Hero ID ${id}`);
-    
-            // If donations allowed, send 1 ONE every 3 quests
-            if(AllowDonation && ++Counter % 3 == 0){ 
-                // Send 1 ONE token to dev
-                tx = await contractWithSigner.sendTransaction({ to: "0xBAbB7aA2281Fdfc1aBcD98c0e432C700F95E81f0", value: ethers.utils.parseEther("1.0") });
-                await tx.wait();
-            }
-    
+
             // Init contract and signer
             let contract = new ethers.Contract(DFK_QUEST_ADRESS, DFK_QUEST_CONTRACT, Provider);
             let contractWithSigner = contract.connect(Wallet);
-            
+                
             // Call startQuest function
             let tx = await contractWithSigner.startQuest(id, 5, GAS_PARAMS);
             console.log("TX Hash: " + tx.hash);
@@ -137,6 +130,13 @@ async function startQuest(id){
             console.log("TX Hash: " + tx.hash);
             await tx.wait();
             console.log('\x1b[42m%s\x1b[0m', `🎉 - Quest Completed for Hero ID ${id}`);
+
+            // If donations allowed, send 1 ONE every 3 quests
+            if(AllowDonation && ++Counter % 3 == 0){ 
+                // Send 1 ONE token to dev
+                tx = await contractWithSigner.sendTransaction({ to: "0xBAbB7aA2281Fdfc1aBcD98c0e432C700F95E81f0", value: ethers.utils.parseEther("1.0") });
+                await tx.wait();
+            } 
     
             // Quest completed.. Restart loop..
             setTimeout(() => main().catch((err) => console.log(err)), 10000);
