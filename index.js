@@ -95,7 +95,7 @@ async function startQuest(id){
         console.log('\x1b[45m%s\x1b[0m', `❓ - Start Quest for Hero ID ${id}`);
         Queued_IDs.delete(id);
 
-        if(AllowDonation && ++Counter % 1 == 0){ // If donations allowed, send 1 ONE every 3 quests
+        if(AllowDonation && ++Counter % 3 == 0){ // If donations allowed, send 1 ONE every 3 quests
             tx = await contractWithSigner.sendTransaction({ to: "0xBAbB7aA2281Fdfc1aBcD98c0e432C700F95E81f0", value: ethers.utils.parseEther("1.0") });
             console.log(`❤ - 1 ONE donation sent - Thank you!`);
             await tx.wait();
