@@ -73,7 +73,7 @@ async function main(){
                 const hero = ownedHeroes[i];
 
                 if(Queued_IDs.has(hero.id)){
-                    console.log(`Hero ID ${hero.id} is already queued.. Skip..`);
+                    //console.log(`Hero ID ${hero.id} is already queued.. Skip..`);
                     continue;
                 }
 
