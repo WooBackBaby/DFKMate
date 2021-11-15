@@ -15,7 +15,7 @@
     ```
     git clone https://github.com/Fadiii/DFKMate.git
     ```
-  - Install dependencies
+  - Install dependencies (after navigating into the new repo)
     ```
     npm install
     ```
