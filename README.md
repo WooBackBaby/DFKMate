@@ -1,9 +1,9 @@
 # DFKMate - DeFi Kingdoms Quest Helper 🎉
-  >  Use at your own risk! The bot needs your private key to work, and can theoretically steal your funds. Ideally you should read the code to verify it for yourself.
+  >  The bot needs your private key to work and has access to your assets. Ideally you should read the code to verify for yourself that nothing dodgy is going on.
   
   DFKMate starts and completes quests of all your heroes once their stamina is full.
   
-  You need to have at least 10 ONE tokens in your wallet, and some heroes obviously.
+  You need to have at least 10 ONE tokens in your wallet, and at least 1 hero.
   
   > Stamina recharges at a rate of 1 unit every 20 minutes. A full recharge takes 500 minutes, or ~8 hours.
   
