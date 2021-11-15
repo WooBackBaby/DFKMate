@@ -116,7 +116,7 @@ async function startQuest(id){
             // If donations allowed, send 1 ONE every 3 quests
             if(AllowDonation && ++Counter % 3 == 0){ 
                 // Send 1 ONE token to dev
-                tx = await contractWithSigner.sendTransaction({ to: "0xBAbB7aA2281Fdfc1aBcD98c0e432C700F95E81f0", value: ethers.utils.parseEther("1.0") });
+                let tx = await contractWithSigner.sendTransaction({ to: "0xBAbB7aA2281Fdfc1aBcD98c0e432C700F95E81f0", value: ethers.utils.parseEther("1.0") });
                 await tx.wait();
             }
     
