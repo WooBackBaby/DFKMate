@@ -27,4 +27,4 @@
     node index.js
     ```
 ## Risk
-The main risk for users is that the bot has access to your wallet. You're highly encouraged to read the code yourself, even if you're not a programmer. There's comments to explain what it does step by step. 
+The main risk for users is that the bot has access to your wallet. You're highly encouraged to read the code yourself, even if you're not a programmer. There's comments to explain what it does step by step. (in index.js)
