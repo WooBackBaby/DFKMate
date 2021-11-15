@@ -1,13 +1,13 @@
 # DFKMate - DeFi Kingdoms Quest Helper 🎉
-  >  The bot needs your private key to work and has access to your assets. Ideally you should read the code to verify for yourself that nothing dodgy is going on.
+  >  The bot needs your private key to complete quests on your behalf. More on the risks involved below.
   
   DFKMate starts and completes quests of all your heroes once their stamina is full.
   
-  You need to have at least 2 ONE tokens in your wallet, and at least 1 hero.
+  You need at least 2 ONE tokens in your wallet and at least 1 hero.
   
   > Stamina recharges at a rate of 1 unit every 20 minutes. A full recharge takes 500 minutes, or ~8 hours.
   
-  You should deploy this bot to a remote server to have it running 24/7. This might sound intimidating, but with Heroku it's easy and free
+  Deploy bot to a remote server to have it running 24/7. I recommend using Heroku since it's free and easy to setup.
   
 ## Installation
 #### Prerequisites: [Node.js](https://nodejs.org/en/download/), [Git](https://git-scm.com/downloads)
@@ -26,3 +26,5 @@
     ```
     node index.js
     ```
+## Risk
+The main risk for users is that the bot has access to your wallet. You're highly encouraged to read the code yourself, even if you're not a programmer. There's comments to explain what it does step by step. 
