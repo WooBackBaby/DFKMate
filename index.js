@@ -91,6 +91,7 @@ async function main(){
                     Queued_IDs.add(hero.id);
                     // set timer to start quest
                     setTimeout(() => startQuest(hero.id), hero.staminaFullAt > 0 ? hero.staminaFullAt + 5000 : 5000);
+                    if(hero.staminaFullAt <= 0) break;
                 }
             }
         }
