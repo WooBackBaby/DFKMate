@@ -1,6 +1,6 @@
 # DFKMate - DeFi Kingdoms Quest Helper 🎉
-  >  The bot needs your private key to complete quests on your behalf. More on the risks involved below.
-  
+  >  The bot needs your private key to complete quests on your behalf.
+
   DFKMate starts and completes quests of all your heroes once their stamina is full.
   
   You need at least 2 ONE tokens in your wallet and at least 1 hero.
