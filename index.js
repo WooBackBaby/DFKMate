@@ -40,7 +40,7 @@ const HERO_FETCH_PARAMS = "{\"query\":\"\\nquery getUserHeroes(\\n$owner: String
 const DFK_QUEST_ADRESS = "0xF5Ff69f4aC4A851730668b93Fc408bC1C49Ef4CE";
 const GAS_PARAMS = { gasPrice: 10000000000, gasLimit: 10000000 };
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const MIN_ONE = 10;
+const MIN_ONE = 2;
 
 const Provider = new ethers.providers.JsonRpcProvider("https://api.harmony.one/");
 const Wallet = new ethers.Wallet(PRIVATE_KEY, Provider);
