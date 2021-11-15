@@ -112,7 +112,6 @@ async function startQuest(id){
 
         if(await Provider.ready){
             console.log('\x1b[45m%s\x1b[0m', `❓ - Start Quest for Hero ID ${id}`);
-
             // Init contract and signer
             let contract = new ethers.Contract(DFK_QUEST_ADRESS, DFK_QUEST_CONTRACT, Provider);
             let contractWithSigner = contract.connect(Wallet);
