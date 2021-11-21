@@ -2,7 +2,6 @@ import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 import ethers from 'ethers';
 import web3 from "web3";
-import readlineSync from "readline-sync";
 
 // Load .env file
 dotenv.config();
@@ -52,16 +51,6 @@ const Wallet = new ethers.Wallet(PRIVATE_KEY, Provider);
 
 const Queued_IDs = new Set();
 let Counter = 0;
-let AllowDonation = false;
-
-// Ask user to turn on donations
-var donationResponse = readlineSync.question('Turn on optional donations (1 ONE/3 Quests)? Type yes or no..');
-
-// Set AllowDonation to true only if answered yes
-if(donationResponse && donationResponse.toLowerCase() == "yes") {
-    AllowDonation = true;
-    console.log(`❤ - Thank you!`);
-}
 
 async function main(){
     try{
@@ -130,13 +119,6 @@ async function startQuest(id){
             console.log("TX Hash: " + tx.hash);
             await tx.wait();
             console.log('\x1b[42m%s\x1b[0m', `🎉 - Quest Completed for Hero ID ${id}`);
-
-            // If donations allowed, send 1 ONE every 3 quests
-            if(AllowDonation && ++Counter % 3 == 0){ 
-                // Send 1 ONE token to dev
-                tx = await contractWithSigner.sendTransaction({ to: "0xBAbB7aA2281Fdfc1aBcD98c0e432C700F95E81f0", value: ethers.utils.parseEther("1.0") });
-                await tx.wait();
-            } 
     
             // Quest completed.. Restart loop..
             setTimeout(() => main().catch((err) => console.log(err)), 10000);
